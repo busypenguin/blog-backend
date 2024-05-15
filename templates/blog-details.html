@@ -15,7 +15,7 @@
             <h1>Blog details</h1>
             <nav aria-label="breadcrumb" class="banner-breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Blog Details</li>
               </ol>
             </nav>
@@ -33,9 +33,9 @@
           <div class="col-lg-8">
             <div class="main_blog_details">
               {% if post.image_url %}
-              <img src="{{post.image_url}}" class="img-fluid" alt="...">
-            {% else %}
-              <img src="{% static 'img/banner/blog.png'%}" class="img-fluid" alt="...">
+                <img src="{{post.image_url}}" class="img-fluid" alt="...">
+              {% else %}
+                <img src="{% static 'img/banner/blog.png'%}" class="img-fluid" alt="...">
               {% endif %}
               <h4>{{post.title}} </h4>
               <div class="user_details">
@@ -64,24 +64,24 @@
 
             <div class="comments-area">
               <h4>{{post.comments|length}} Comments</h4>
-              {%for comment in post.comments%}
-              <div class="comment-list">
-                <div class="single-comment justify-content-between d-flex">
-                  <div class="user justify-content-between d-flex">
-                    <div class="desc">
-                      <h5><a href="#">{{comment.author}}</a></h5>
-                      <p class="date">{{comment.published_at}}</p>
-                      <p class="comment">
-                          {{comment.text}}
-                      </p>
+                {%for comment in post.comments%}
+                  <div class="comment-list">
+                    <div class="single-comment justify-content-between d-flex">
+                      <div class="user justify-content-between d-flex">
+                        <div class="desc">
+                          <h5><a href="#">{{comment.author}}</a></h5>
+                          <p class="date">{{comment.published_at}}</p>
+                          <p class="comment">
+                              {{comment.text}}
+                          </p>
+                        </div>
+                      </div>
+                      <div class="reply-btn">
+                              <a href="" class="btn-reply text-uppercase">reply</a> 
+                      </div>
                     </div>
-                  </div>
-                  <div class="reply-btn">
-                          <a href="" class="btn-reply text-uppercase">reply</a> 
-                  </div>
-                </div>
-              </div>	
-              {%endfor%}
+                  </div>	
+                {%endfor%}
             </div>
           </div>
 
@@ -176,8 +176,8 @@
         </div>
         <div class="footer-bottom d-flex justify-content-center align-items-center flex-wrap">
           <p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
         </div>
       </div>
     </footer>
